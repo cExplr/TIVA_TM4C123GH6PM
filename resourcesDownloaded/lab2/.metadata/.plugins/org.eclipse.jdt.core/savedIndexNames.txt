@@ -1,0 +1,3 @@
+INDEX VERSION 1.130+/home/c3xp1r/Desktop/lab2/.metadata/.plugins/org.eclipse.jdt.core
+2188923391.index
+3327406048.index
