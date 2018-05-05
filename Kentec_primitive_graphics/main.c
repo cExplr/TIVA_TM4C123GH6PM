@@ -74,19 +74,22 @@ int main(void)
     GrRectDraw(&g_sContext, &rectangle3);
 */
 
-    GrCircleDraw(&g_sContext, 100 , 100 , 20);  // No need for any initialize
-    GrCircleFill(&g_sContext, 100 , 100 , 10);  // Fill up the circle to selected radius
+    GrCircleDraw(&g_sContext, GrContextDpyWidthGet(&g_sContext)/2 - 51 , 100 , 20);  // No need for any initialize
+    GrCircleFill(&g_sContext, GrContextDpyWidthGet(&g_sContext)/2 - 51 , 100 , 10);  // Fill up the circle to selected radius
 
-    GrCircleDraw(&g_sContext, 200 , 100 , 20);
-    GrCircleFill(&g_sContext, 200 , 100 , 10);
+    GrCircleDraw(&g_sContext, GrContextDpyWidthGet(&g_sContext)/2 + 51 , 100 , 20);
+    GrCircleFill(&g_sContext, GrContextDpyWidthGet(&g_sContext)/2 + 51 , 100 , 10);
 
     GrContextForegroundSet(&g_sContext , ClrLightPink); // Change default color ro pink
-    GrLineDrawH(&g_sContext, 100, 200 , 150);
-
+    GrLineDrawH(&g_sContext, GrContextDpyWidthGet(&g_sContext)/2 - 45, GrContextDpyWidthGet(&g_sContext)/2 + 45 , 150);
     GrContextForegroundSet(&g_sContext , ClrMistyRose);
     GrContextFontSet(&g_sContext , &g_sFontCm18b);          // Font setting is also a must for string drawing operation
-    GrStringDrawCentered(&g_sContext, "c3xp1r", -1 , GrContextDpyWidthGet(&g_sContext)/2 , GrContextDpyHeightGet(&g_sContext)/1.25, 0);   // length set to -1 prints the entire string
+    GrStringDrawCentered(&g_sContext, "c3xp1r", -1 , GrContextDpyWidthGet(&g_sContext)/2 , GrContextDpyHeightGet(&g_sContext)/1.35, 0);   // length set to -1 prints the entire string
+    GrFlush(&g_sContext);
+    SysCtlDelay(SysCtlClockGet());
+    GrStringDrawCentered(&g_sContext, "Code.explore.95@gmail.com", -1 , GrContextDpyWidthGet(&g_sContext)/2 , GrContextDpyHeightGet(&g_sContext)/1.20, 0);
 
+  //  GrStringDrawCentered(&g_sContext, "LALALA", -1 , GrContextDpyWidthGet(&g_sContext)/2 , GrContextDpyHeightGet(&g_sContext)/1.25, 0);   // length set to -1 prints the entire string
     while(1)
     {
     }
